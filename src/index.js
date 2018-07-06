@@ -17,7 +17,7 @@ const proxy = httpProxy.createProxyServer({
 });
 const server = http.createServer(function (req, res) {
     log.log(req);
-    proxy.web(req, res, {target});
+    proxy.web(req, res, {target, changeOrigin: true});
 });
 
 console.log(`Server listening on port ${port}`);
