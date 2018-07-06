@@ -27,7 +27,7 @@ module.exports = function logger(logDir) {
       });
 
       req.on('end', () => {
-        wStream.write(JSON.stringify(req).replace(NEWLINES, ' ') + '\n')
+        wStream.write(JSON.stringify(payload).replace(NEWLINES, ' ') + '\n')
       });
     }
   };
