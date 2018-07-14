@@ -3,7 +3,9 @@ const fs = require('fs');
 const NEWLINES = /\n/ig;
 
 module.exports = function logger(logDir) {
-  const wStream = fs.createWriteStream(`${logDir}/req-log.log`);
+  const wStream = logDir === 'STDOUT' ? process.stdout : fs.createWriteStream(logDir, {
+    flags: 'a'
+  });
 
   return {
     log(req) {

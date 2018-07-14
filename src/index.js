@@ -7,7 +7,7 @@ program
     .version('1.0.0')
     .option('-p, --port <n>', 'Port to accept requests on')
     .option('-t, --target <target>', 'Proxy target')
-    .option('-d, --log-dir <dir>', 'Directory to store logs')
+    .option('-d, --log-dir <dir>', 'Directory to store logs (or STDOUT to write to standard output)')
     .parse(process.argv);
 
 const {logDir, target, port} = program;
